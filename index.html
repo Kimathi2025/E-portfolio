@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyclife Kimathi | E-Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Wyclife Kimathi</h1>
+    <p>IT Student | Junior Web Developer</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am an IT diploma student at the Technical University of Kenya with a strong interest in
+        web development and computer systems. I enjoy learning new technologies and building simple,
+        functional websites.
+    </p>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <ul>
+        <li>HTML5 & CSS3</li>
+        <li>JavaScript (Basics)</li>
+        <li>Git & GitHub</li>
+        <li>Database Fundamentals (DBMS)</li>
+        <li>Computer Networking Basics</li>
+    </ul>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+
+    <!-- Calculator Project Embedded -->
+    <div class="project">
+        <h3>Simple Calculator</h3>
+        <p>A basic calculator built using HTML, CSS, and JavaScript.</p>
+
+        <div class="calculator">
+            <input type="text" id="display" disabled>
+
+            <div class="buttons">
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="appendValue('/')">÷</button>
+                <button onclick="appendValue('*')">×</button>
+                <button onclick="appendValue('-')">−</button>
+
+                <button onclick="appendValue('7')">7</button>
+                <button onclick="appendValue('8')">8</button>
+                <button onclick="appendValue('9')">9</button>
+                <button onclick="appendValue('+')">+</button>
+
+                <button onclick="appendValue('4')">4</button>
+                <button onclick="appendValue('5')">5</button>
+                <button onclick="appendValue('6')">6</button>
+                <button onclick="appendValue('=')">=</button>
+
+                <button onclick="appendValue('1')">1</button>
+                <button onclick="appendValue('2')">2</button>
+                <button onclick="appendValue('3')">3</button>
+                <button onclick="appendValue('0')" class="zero">0</button>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: kimathiwyclife40@gmail.com</p>
+    <p>GitHub: https://github.com/Wyclifekimathi</p>
+</section>
+
+<footer>
+    <p>© 2026 Wyclife Kimathi</p>
+</footer>
+
+<!-- Calculator JavaScript -->
+<script>
+let display = document.getElementById("display");
+
+function appendValue(value) {
+    if (value === "=") {
+        calculate();
+    } else {
+        display.value += value;
+    }
+}
+
+function clearDisplay() {
+    display.value = "";
+}
+
+function calculate() {
+    try {
+        display.value = eval(display.value);
+    } catch (e) {
+        display.value = "Error";
+    }
+}
+</script>
+
+</body>
+</html>
